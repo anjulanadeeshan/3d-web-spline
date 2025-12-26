@@ -23,21 +23,6 @@ export default function About() {
     { label: 'Support', value: '24/7' },
   ];
 
-  const founders = [
-    {
-      name: 'Anjula Nadeeshan',
-      role: 'Co-Founder & Full Stack Developer',
-      image: anjulaImage,
-      expertise: 'React, TypeScript, Laravel'
-    },
-    {
-      name: 'Bashitha',
-      role: 'Co-Founder & Full Stack Developer',
-      image: bashithaImage,
-      expertise: 'PHP, JavaScript, Backend Development'
-    },
-  ];
-
   const values = [
     {
       icon: Target,

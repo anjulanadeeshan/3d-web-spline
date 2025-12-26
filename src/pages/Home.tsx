@@ -110,7 +110,7 @@ export default function Home() {
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            {services.map((service, index) => (
+            {services.map((service) => (
               <motion.div
                 key={service.title}
                 initial={false}
