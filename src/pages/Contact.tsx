@@ -12,9 +12,17 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We will get back to you soon.');
+    
+    // Format message for WhatsApp
+    const whatsappMessage = `*New Contact Request*%0A%0A*Name:* ${formData.name}%0A*Email:* ${formData.email}%0A*Service:* ${formData.service}%0A*Message:* ${formData.message}`;
+    
+    // WhatsApp number (remove spaces and special characters)
+    const whatsappNumber = '94760899476';
+    
+    // Open WhatsApp with pre-filled message
+    window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, '_blank');
+    
+    // Reset form
     setFormData({ name: '', email: '', service: '', message: '' });
   };
 
@@ -31,19 +39,19 @@ export default function Contact() {
     {
       icon: Mail,
       label: 'Email',
-      value: 'hello@digitalsolutions.com',
-      link: 'mailto:hello@digitalsolutions.com',
+      value: 'anjulanadeeshan2002@gmail.com',
+      link: 'mailto:anjulanadeeshan2002@gmail.com',
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567',
+      value: '+94 76 089 9476',
+      link: 'tel:+94760899476',
     },
     {
       icon: MapPin,
       label: 'Address',
-      value: '123 Business St, Tech City, TC 12345',
+      value: 'Gampaha, Sri Lanka',
       link: '#',
     },
   ];
@@ -246,14 +254,24 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Map Section (Optional) */}
+      {/* Map Section */}
       <section className="py-16 bg-dark-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-dark-700 h-96 rounded-xl overflow-hidden">
-            {/* Placeholder for map - you can integrate Google Maps or similar */}
-            <div className="w-full h-full flex items-center justify-center">
-              <p className="text-cream-400">Map Integration Area</p>
-            </div>
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-cream mb-4">Our Location</h2>
+            <p className="text-cream-300">Find us in Gampaha, Sri Lanka</p>
+          </div>
+          <div className="bg-dark-700 h-96 rounded-xl overflow-hidden border border-white/10">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253682.6209489718!2d79.7553!3d7.0873!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2f948f97840a9%3A0x5dd38b6819b4bdf8!2sGampaha%2C%20Sri%20Lanka!5e0!3m2!1sen!2slk!4v1735214400000!5m2!1sen!2slk"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Google Maps - Gampaha, Sri Lanka"
+            ></iframe>
           </div>
         </div>
       </section>

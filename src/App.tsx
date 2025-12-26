@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import backgroundImage from './assets/red-light-round-podium-black-background-mock-up.jpg';
 
 // Import Pages
@@ -16,18 +17,23 @@ function App() {
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       {/* Background overlay for better readability */}
-      <div className="min-h-screen bg-dark-900/30">
+      <div className="min-h-screen bg-dark-900/30 flex flex-col">
         {/* Navbar stays consistent on all pages */}
         <Navbar />
         
         {/* Routes change the content below the Navbar based on URL */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <div className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </div>
+
+        {/* Footer appears on all pages */}
+        <Footer />
       </div>
     </div>
   )

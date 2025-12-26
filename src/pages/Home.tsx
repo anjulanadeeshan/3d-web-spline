@@ -198,26 +198,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-dark">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-cream mb-6">
-            Start Your Project Today
-          </h2>
-          <p className="text-xl text-cream-300 mb-8 max-w-2xl mx-auto">
-            Transform your vision into reality with our expert team. Get in
-            touch and let's build something amazing together.
-          </p>
-          <Link
-            to="/contact"
-            className="inline-flex items-center justify-center px-8 py-4 bg-cream text-dark rounded-lg hover:bg-cream-400 transition-colors font-semibold text-lg shadow-xl"
-          >
-            Contact Us Now
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Link>
-        </div>
-      </section>
     </main>
   );
 }
